@@ -1,0 +1,63 @@
+<div class="contain">
+<form class="form-agregar-empleado" [formGroup]="formularioEmpleado" (ngSubmit)="agregarEmpleado()">
+    <h1>Agregar empleado</h1>
+    <mat-form-field>
+        <mat-label>Numero de documento</mat-label>
+    <input matInput type="number" formControlName="nroDocumento">
+    <mat-error *ngIf="formularioEmpleado.get('nroDocumento')?.hasError('required')"> 'nroDocumento' es obligatorio. </mat-error>
+    <mat-error *ngIf="formularioEmpleado.get('nroDocumento')?.hasError('pattern')"> 'nroDocumento' debe ser un número. </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+    <input matInput type="text" formControlName="nombre">
+    <mat-error *ngIf="formularioEmpleado.get('nombre')?.hasError('required')">'nombre' es obligatorio.</mat-error>
+    <mat-error *ngIf="formularioEmpleado.get('nombre')?.hasError('pattern')">Solo se permiten letras en el campo 'nombre'.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Apellido</mat-label>
+        <input matInput type="text" formControlName="apellido">
+        <mat-error *ngIf="formularioEmpleado.get('apellido')?.hasError('required')"> 'apellido' es obligatorio. </mat-error>
+        <mat-error *ngIf="formularioEmpleado.get('apellido')?.hasError('pattern')"> Solo se permiten letras en el campo 'apellido'. </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-error *ngIf="formularioEmpleado.get('email')?.hasError('required')"> 'email' es obligatorio. </mat-error>
+        <mat-error *ngIf="formularioEmpleado.get('email')?.hasError('pattern')"> 'email' no es válido. </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput type="date" formControlName="fechaNacimiento"  >
+        <mat-error *ngIf="formularioEmpleado.get('fechaNacimiento')?.hasError('required')">
+            'fechaNacimiento' es obligatoria.
+        </mat-error>
+        <mat-error *ngIf="formularioEmpleado.get('fechaNacimiento')?.hasError('fechaNacimientoPosterior')">
+        {{formularioEmpleado.get('fechaNacimiento')?.getError('fechaNacimientoPosterior').message}}
+        </mat-error>
+        <mat-error *ngIf="formularioEmpleado.get('fechaNacimiento')?.hasError('edadInvalida')">
+            {{formularioEmpleado.get('fechaNacimiento')?.getError('edadInvalida').message}}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Fecha de ingreso</mat-label>
+        <input matInput type="date" formControlName="fechaIngreso">
+        <mat-error *ngIf="formularioEmpleado.get('fechaIngreso')?.hasError('required')">
+            'fechaIngreso' es obligatoria.
+        </mat-error>
+        <mat-error *ngIf="formularioEmpleado.get('fechaIngreso')?.hasError('fechaIngresoPosterior')">
+        {{formularioEmpleado.get('fechaIngreso')?.getError('fechaIngresoPosterior').message}}
+        </mat-error>
+    </mat-form-field>
+
+    <div>
+        <button class="button-cancelar-form" (click)="navegarListaEmpleado()" type="button" mat-raised-button>Cancelar</button>
+        <button class="button-agregar-empledo-form" mat-raised-button color="primary" type="submit" [disabled]="!formularioEmpleado.valid" >Agregar</button>
+
+    </div>
+</form>
+</div>

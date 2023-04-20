@@ -1,0 +1,11 @@
+.container-layout{
+    width: 100%;
+}
+app-footer{
+    display: flex;
+    height: var(--footer-hight);
+}
+app-header{
+    display: flex;
+    height: var(--header-hight);
+}

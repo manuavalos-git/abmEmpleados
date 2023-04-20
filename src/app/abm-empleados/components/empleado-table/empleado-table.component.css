@@ -1,0 +1,91 @@
+.contain{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  margin: 8vh;
+}
+.sin-empleados{
+  color: white;
+  background-color: var(--fifth-color);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.4rem;
+}
+
+.button-empleado-table{
+  margin: 2%;
+}
+
+@media (max-width:825px) {
+  .table thead{
+    display:none;
+  }
+  .table,.table tbody,.table tr,.table td{
+    display: block;
+  }
+  .table tr{
+    margin-bottom: 2rem;
+  }
+  .table tbody tr td{
+    text-align: right;
+    position: relative;
+    padding: 1.2rem;
+    padding-right: 15px;
+    min-height: 6.5vh;
+    min-width: 25rem;
+  }
+  .table td::before{
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+}
+
+.table{
+    height: 100%;
+    width: 100%;
+    color: white;
+    border-collapse: collapse;
+
+}
+
+.table td {
+  padding: 1rem;
+  border-top: 1px solid #636466;
+  text-align:center;
+  background-color: var(--fifth-color);
+}
+.table th{
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  height: 8vh;
+}
+
+.table thead  :first-child{
+  border-radius: 1.2rem 0 0  0 ;
+}
+.table thead  :last-child{
+  border-radius: 0 1.2rem  0  0 ;
+}
+
+
+.button-agregar-empledo{
+    margin-bottom: 3rem ;
+    padding: 2vh 2vw;
+    border-radius: 1.5rem;
+}
+.button-agregar-empledo-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+

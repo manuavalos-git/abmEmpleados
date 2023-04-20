@@ -1,0 +1,39 @@
+<div class="contain">
+  <div class="button-agregar-empledo-container">
+    <button (click)="navegarAgregarEmpleado()" class="button-agregar-empledo" mat-raised-button color="primary">Agregar Empleado</button>
+  </div>
+    <table class="table" *ngIf="empleados.length > 0">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Numero de Documento</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Fecha Nacimiento</th>
+          <th>Fecha Ingreso</th>
+          <th>Fecha Creacion</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleado of empleados">
+          <td data-label="Id" >{{empleado.id}}</td>
+          <td data-label="Numero de Documento" >{{empleado.nroDocumento}}</td>
+          <td data-label="Nombre" >{{empleado.nombre | titlecase }}</td>
+          <td data-label="Apellido" >{{empleado.apellido| titlecase}}</td>
+          <td data-label="Email" >{{empleado.email}}</td>
+          <td data-label="Fecha Nacimiento" >{{empleado.fechaNacimiento| date }}</td>
+          <td data-label="Fecha Ingreso" >{{empleado.fechaIngreso | date }}</td>
+          <td data-label="Fecha Creacion" >{{empleado.fechaCreacion| date }}</td>
+
+          <td data-label="Acciones" >
+            <button class="button-empleado-table" mat-raised-button color="link" (click)="empleado.id && navegarActualizarEmpleado(empleado.id)" >Editar</button>
+            <button  class="button-empleado-table" mat-raised-button color="warn" (click)=" empleado.id && eliminarEmpleado(empleado.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="sin-empleados" *ngIf="!(empleados.length > 0)" >No se han encontrado empleados para mostrar. Por favor, agregue empleados para visualizar la lista.</div>
+</div>
+

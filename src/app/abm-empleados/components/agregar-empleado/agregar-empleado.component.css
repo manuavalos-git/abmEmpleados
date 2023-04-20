@@ -1,0 +1,7 @@
+app-empleado-form-add{
+    background-color: var(--third-color);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - (var(--header-hight) + var(--footer-hight)));
+}

@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family:  Roboto;
+    font-size: 1.5rem;
+}
+
+:root{
+    --primary-color:#14212A;
+    --second-color:#CD6EFF;
+    --third-color:#F5F6F7 ;
+    --fourth-color:#89D2E6;
+    --fifth-color:#292828;
+    --header-hight:10rem;
+    --footer-hight:5rem;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+

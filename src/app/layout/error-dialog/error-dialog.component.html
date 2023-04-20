@@ -1,0 +1,12 @@
+
+<div class="container-error">
+  <h1 mat-dialog-title>Error</h1>
+  <div mat-dialog-content>
+    <ul>
+      <li *ngFor="let message of  data.message ">{{ message }}</li>
+    </ul>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button (click)="navigateTo ? navigateAndClose(navigateTo) : onClose()">Close</button>
+  </div>
+</div>

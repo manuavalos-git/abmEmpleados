@@ -1,0 +1,22 @@
+.form-agregar-empleado{
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 5rem;
+    background-color: var(--fifth-color);
+    border-radius: 2rem;
+    color: white;
+}
+mat-form-field{
+    padding:  3rem 0;
+}
+.button-agregar-empledo-form,.button-cancelar-form{
+    margin:  1rem 1rem;
+    padding: 0.5rem 2rem;
+}
+.contain{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin: 8vh;
+}
