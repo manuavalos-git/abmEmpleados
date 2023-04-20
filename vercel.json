@@ -1,12 +1,3 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "dist/ambEmpleados/",
-        "use": "@vercel/static-build"
-      }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/index.html" }
-    ]
+    "version": 2
   }
